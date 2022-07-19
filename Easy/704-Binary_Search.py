@@ -1,7 +1,5 @@
 class Solution:
-    """
-    search  -> Time { O(log n), θ(log n), Ω(1) } and Space { O(1), θ(1), Ω(1) }
-    """
+    # search  -> Time { O(log n), θ(log n), Ω(1) } and Space { O(1), θ(1), Ω(1) }
 
     def search(self, nums: list[int], target: int) -> int:
         left, right = 0, len(nums) - 1

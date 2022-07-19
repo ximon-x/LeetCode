@@ -1,7 +1,5 @@
 class Solution:
-    """
-    isPalindrome    -> Time { O(n), θ(n), Ω(1) } and Space { O(1), θ(1), Ω(1) }
-    """
+    # isPalindrome    -> Time { O(n), θ(n), Ω(1) } and Space { O(1), θ(1), Ω(1) }
 
     def isPalindrome(self, x: int) -> bool:
         x, n = str(x), len(str(x)) - 1

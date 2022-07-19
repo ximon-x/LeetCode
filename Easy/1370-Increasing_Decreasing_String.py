@@ -2,9 +2,7 @@ import collections
 
 
 class Solution:
-    """
-    sortString  -> Time { O(n), θ(n), Ω(1) } and Space { O(n), θ(n), Ω(1) }
-    """
+    # sortString  -> Time { O(n), θ(n), Ω(1) } and Space { O(n), θ(n), Ω(1) }
 
     def sortString(self, s: str) -> str:
         count = collections.Counter(s)

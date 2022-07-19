@@ -1,7 +1,5 @@
 class Solution:
-    """
-    generate    -> Time { O(n), θ(n), Ω(1) } and Space { O(1), θ(1), Ω(1) }
-    """
+    # fizzBuzz    -> Time { O(n), θ(n), Ω(1) } and Space { O(1), θ(1), Ω(1) }
 
     def fizzBuzz(self, n: int) -> list[str]:
         answer = []

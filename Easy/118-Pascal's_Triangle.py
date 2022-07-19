@@ -1,8 +1,6 @@
 class Solution:
-    """
-    generate    -> Time { O(n), θ(n), Ω(1) } and Space { O(1), θ(1), Ω(1) }
-    pascalize   -> Time { O(n), θ(n), Ω(1) } and Space { O(1), θ(1), Ω(1) }
-    """
+    # generate    -> Time { O(n), θ(n), Ω(1) } and Space { O(1), θ(1), Ω(1) }
+    # pascalize   -> Time { O(n), θ(n), Ω(1) } and Space { O(1), θ(1), Ω(1) }
 
     def generate(self, numRows: int) -> list[list[int]]:
         if numRows == 0:

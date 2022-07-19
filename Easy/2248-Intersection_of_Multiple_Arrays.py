@@ -1,7 +1,5 @@
 class Solution:
-    """
-    intersection    -> Time { O(n), θ(n), Ω(1) } and Space { O(1), θ(1), Ω(1) }
-    """
+    # intersection    -> Time { O(n), θ(n), Ω(1) } and Space { O(1), θ(1), Ω(1) }
 
     def intersection(self, nums: list[list[int]]) -> list[int]:
 

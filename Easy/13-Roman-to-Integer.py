@@ -1,7 +1,5 @@
 class Solution:
-    """
-    romanToInt   -> Time { O(n), θ(n), Ω(1) } and Space { O(1), θ(1), Ω(1) }
-    """
+    # romanToInt   -> Time { O(n), θ(n), Ω(1) } and Space { O(1), θ(1), Ω(1) }
 
     def romanToInt(self, s: str) -> int:
         answer = 0

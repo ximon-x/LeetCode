@@ -1,7 +1,5 @@
 class Solution:
-    """
-    numberofSteps   -> Time { O(log n), θ(log n), Ω(1) } and Space { O(1), θ(1), Ω(1) }
-    """
+    # numberofSteps   -> Time { O(log n), θ(log n), Ω(1) } and Space { O(1), θ(1), Ω(1) }
 
     def numberOfSteps(self, num: int) -> int:
         steps = 0

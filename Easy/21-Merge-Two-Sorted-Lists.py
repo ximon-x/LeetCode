@@ -5,9 +5,7 @@ class ListNode:
 
 
 class Solution:
-    """
-    mergeTwoLists   -> Time { O(2n), θ(2n), Ω(1) } and Space { O(n), θ(n), Ω(1) }
-    """
+    # mergeTwoLists   -> Time { O(2n), θ(2n), Ω(1) } and Space { O(n), θ(n), Ω(1) }
 
     def mergeTwoLists(self, list1, list2):
         if list1 == None:

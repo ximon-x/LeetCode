@@ -1,7 +1,5 @@
 class Solution:
-    """ "
-    largestAltitude  -> Time { O(n), θ(n), Ω(1) } and Space { O(1), θ(1), Ω(1) }
-    """
+    # largestAltitude  -> Time { O(n), θ(n), Ω(1) } and Space { O(1), θ(1), Ω(1) }
 
     def largestAltitude(self, gain: list[int]) -> int:
         altitudes = [0]
