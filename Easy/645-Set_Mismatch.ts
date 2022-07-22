@@ -1,5 +1,6 @@
 function findErrorNums(nums: number[]): number[] {
   // findErrorNums  -> Time { O(n^2), θ(n^2), Ω(n) } and Space { O(1), θ(1), Ω(1) }
+
   let duplicate_missing: number[] = [];
 
   for (let i = 0; i < nums.length; i++) {
