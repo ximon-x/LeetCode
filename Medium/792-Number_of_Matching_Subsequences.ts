@@ -22,3 +22,5 @@ function verifySubseq(supseq: string, word: string): number {
 // if present and i!=s.length-1, 
 // return verifySubseq(s.slice(i+1), word.slice(1))
 // return 0
+
+// when word.length 
