@@ -1,23 +1,21 @@
 function uniquePaths(m: number, n: number): number {
-  let memo: number = 0;
+  if (m == 1 || n == 1) return 1;
+    m -= 1;
+    n -= 1;
+  
+  if (m < n) {
+    m = m + n;
+    n = m - n;
+    m = m - n;
+  }
 
-  const pathFinder = (i: number, j: number, memo: number): number => {
-    if (i === 0 && j === 0) return memo;
-    console.log("Returning 1");
+  let result: number = 1;
+  let j = 1;
+  
+  for(let i = m+1; i <= m+n; i++, j++) {
+    result *= i;
+    result /= j;
+  }
 
-    if (i !== 0) {
-      memo += pathFinder(i - 1, j, memo);
-    }
-
-    if (j !== 0) {
-      memo += pathFinder(i, j - 1, memo);
-    }
-    
-    return memo;
-  };
-
-  memo = pathFinder(m, n, memo);
-  return memo;
+  return result;
 }
-
-console.log(uniquePaths(3, 7));
