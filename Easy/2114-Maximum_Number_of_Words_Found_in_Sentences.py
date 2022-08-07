@@ -1,4 +1,6 @@
 class Solution:
+    # mostWordsFound    -> Time { O(n), θ(n), Ω(1) } and Space { O(1), θ(1), Ω(1) }
+
     def mostWordsFound(self, sentences: list[str]) -> int:
         max_words = 0
 

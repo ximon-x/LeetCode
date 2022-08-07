@@ -4,6 +4,9 @@ class TreeNode:
         self.left = left
         self.right = right
 
+
 class Solution:
-    def checkTree(self, root: optional[TreeNode]) -> bool:
+    # checkTree    -> Time { O(1), θ(1), Ω(1) } and Space { O(1), θ(1), Ω(1) }
+
+    def checkTree(self, root: TreeNode) -> bool:
         return root.val == root.left.val + root.right.val
