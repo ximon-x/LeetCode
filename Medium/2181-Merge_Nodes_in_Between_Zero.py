@@ -5,6 +5,8 @@ class ListNode:
 
 class Solution:
     def mergeNodes(self, head: ListNode | None) -> ListNode | None:
+        # mergeNodes    -> Time { O(2^n), θ(2^n), Ω(n) } and Space { O(2n), θ(2n), Ω(2n) }
+
         if head.next is None:
             return None
         
