@@ -1,6 +1,7 @@
 class Solution:
-    def smallerNumbersThanCurrent(self, nums: List[int]) -> List[int]:
+    def smallerNumbersThanCurrent(self, nums: list[int]) -> list[int]:
         # smallerNumbersThanCurrent -> Time { O(n^2), θ(n^2), Ω(n) } and Space { O(n), θ(n), Ω(n) }
+
         result = []
 
         for i in nums:
