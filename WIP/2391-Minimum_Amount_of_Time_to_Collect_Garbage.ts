@@ -1,8 +1,18 @@
 function garbageCollection(garbage: string[], travel: number[]): number {
   const trucks = ["P", "G", "M"];
+  let workingTrucks: string[] = [];
+
+  for (let garb of garbage) {
+    for (let truck of trucks) {
+      if (garb.includes(truck) && !workingTrucks.includes(truck)) {
+        workingTrucks.push(truck);
+      }
+    }
+  }
+
   let time = 0;
 
-  for (let truck of trucks) {
+  for (let truck of workingTrucks) {
     for (let i = 0; i < garbage.length; i++) {
       for (let garb of garbage[i]) {
         if (garb === truck) time += 1;
