@@ -1,30 +1,40 @@
-function garbageCollection(garbage: string[], travel: number[]): number {
-  const trucks = ["P", "G", "M"];
-  let workingTrucks: string[] = [];
+function garabageCollection(garbage: string[], travel: number[]): number {}
 
-  for (let garb of garbage) {
-    for (let truck of trucks) {
-      if (garb.includes(truck) && !workingTrucks.includes(truck)) {
-        workingTrucks.push(truck);
-      }
-    }
-  }
+// function garbageCollection(garbage: string[], travel: number[]): number {
+//   const trucks = ["P", "G", "M"];
+//   let workingTrucks: string[] = [];
+//   let workingHouses: { [key: string]: number } = {};
 
-  let time = 0;
+//   for (let i = 0; i < garbage.length; i++) {
+//     for (let j = 0; j < trucks.length; j++) {
+//       if (
+//         garbage[i].includes(trucks[j]) &&
+//         !workingTrucks.includes(trucks[j])
+//       ) {
+//         workingTrucks.push(trucks[j]);
+//       }
+//       if (garbage[i].includes(trucks[j])) {
+//       }
+//     }
+//   }
+//   console.log(workingTrucks);
 
-  for (let truck of workingTrucks) {
-    for (let i = 0; i < garbage.length; i++) {
-      for (let garb of garbage[i]) {
-        if (garb === truck) time += 1;
-      }
+//   let time = 0;
 
-      if (i !== travel.length) time += travel[i];
-    }
-  }
+//   for (let truck of workingTrucks) {
+//     for (let i = 0; i < garbage.length; i++) {
+//       for (let garb of garbage[i]) {
+//         if (garb === truck) time += 1;
+//       }
 
-  return time;
-}
+//       if (i !== travel.length) time += travel[i];
+//     }
+//   }
 
-console.log(garbageCollection(["G", "P", "GP", "GG"], [2, 4, 3]));
+//   return time;
+// }
 
-// Your bug is that the you need to verify that a certain kind of garbage exists before sending out a truck.
+// console.log(garbageCollection(["G", "P", "GP", "GG"], [2, 4, 3]));
+
+// // Check if the next house has garbage type.
+// // Check if all houses have the garabage type per truck.
