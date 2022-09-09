@@ -1,5 +1,5 @@
 class Solution:
-    def cellsInRange(self, s: str) -> list[str]:
+    def cellsInRange(self, s: str):
         # restoreString   -> Time { O(2n), θ(2n), Ω(2n) } and Space { O(2n), θ(2n), Ω(2n) }
 
         col1, col2 = ord(s[0]), ord(s[3])
