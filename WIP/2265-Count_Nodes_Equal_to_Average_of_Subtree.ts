@@ -9,37 +9,27 @@ class TreeNode {
   }
 }
 
+let result: number = 0;
+
 function averageOfSubtree(root: TreeNode | null): number {
-  if (root === null) return 0;
-
-  let resultNodes: number = 0;
-  const averageCalculator = (treeNode: TreeNode | null) => {
-    if (treeNode === null) return;
-  };
-
-  return resultNodes;
+  dfs(root);
+  return result;
 }
 
-// def averageOfSubtree(self, root: Optional[TreeNode]) -> int:
-//         result = 0
+function dfs(node: TreeNode | null): number[] {
+  if (node == null) {
+    return [0, 0];
+  }
 
-//         def traverse(node):
-//             nonlocal result
+  let left: number[] = dfs(node.left);
+  let right: number[] = dfs(node.right);
 
-//             if not node:
-//                 return 0, 0
+  let currSum: number = left[0] + right[0] + node.val;
+  let currCount: number = left[1] + right[1] + 1;
 
-//             left_sum, left_count = traverse(node.left)
-//             right_sum, right_count = traverse(node.right)
+  if (currSum / currCount == node.val) {
+    result += 1;
+  }
 
-//             s = node.val + left_sum + right_sum
-//             c = 1 + left_count + right_count
-
-//             if s // c == node.val:
-//                 result += 1
-
-//             return s, c
-
-//         traverse(root)
-
-//         return result
+  return [currSum, currCount];
+}
