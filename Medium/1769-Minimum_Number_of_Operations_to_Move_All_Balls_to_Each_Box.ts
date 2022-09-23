@@ -1,41 +1,37 @@
 function minOperations(boxes: string): number[] {
-  let result: number[] = [];
+  const result: number[] = Array(boxes.length).fill(0);
 
-  for (let i = 0; i < boxes.length; i++) {
-    let operations: number = 0;
+  // First we make one pass through the array (left to right).
+  // For each index, we calculate the moves needed to get every
+  // non-empty box on the left of the current index to the current index.
 
-    for (let j = 0; j < boxes.length; j++) {
-      operations = Math.abs(parseInt(boxes[i]) - parseInt(boxes[j]));
-    }
+  // At each i in boxes:
+  //   - add the running sum to result[i]
+  //   - increment the notEmpty box count if the current box is '1'
+  //   - add the previously seen notEmpty boxes (including current index) to the runningSum
 
-    result.push(operations);
+  let notEmpty: number = 0;
+  let runningSum: number = 0;
+
+  for (let i = 0; i < boxes.length; ++i) {
+    result[i] += runningSum;
+    if (boxes[i] === "1") ++notEmpty;
+    runningSum += notEmpty;
+  }
+
+  // Make one more pass through the array (right to left).
+  // The operations are identical to the first loop, except that
+  // this pass calculates the moves needed to get every non-empty box
+  // on the right of each index to the current index.
+
+  notEmpty = 0;
+  runningSum = 0;
+
+  for (let i = boxes.length - 1; i >= 0; --i) {
+    result[i] += runningSum;
+    if (boxes[i] === "1") ++notEmpty;
+    runningSum += notEmpty;
   }
 
   return result;
 }
-
-// Input: boxes = "110";
-// Output: [1, 1, 3];
-
-// Input: boxes = "001011"
-// Output: [11,8,5,4,3,4]
-
-// Problem: For each iteration, move all balls into that current box.
-
-// Solution:
-// 1. Declare result
-// 2. Initialize a nested loop (n ** 2)
-
-// 3. For i in boxes:
-// 4.   Declare operations
-// 5.   Declare ballsInBox
-
-// 5.   For j in boxes:
-// 6.     if box[j] != 0
-// 6.     operations += Abs(i -j)
-// 7.   Add operations to result
-
-// 8. Return result
-
-// Uncertainty:
-// 1. Does moving all balls into a box for the current iteration affect the next iteration. It does.
