@@ -5,10 +5,11 @@ class OrderedStream:
 
     def insert(self, idKey: int, value: str) -> list[str]:
         response = []
+        self.values[idKey - 1] = value
 
-        self.values.insert(idKey, value)
         if self.values[self.pointer] is None:
             return []
+
         else:
             while (
                 self.pointer < len(self.values)
