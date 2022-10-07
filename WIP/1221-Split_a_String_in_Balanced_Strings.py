@@ -1,13 +1,17 @@
 class solution:
-    def __init__(self):
-        self.pointer_r = 0
-        self.pointer_l = 0
-        self.curr_num_r = 0
-        self.curr_num_l = 0
-        self.result = []
-
     def balancedStringSplit(self, s: str) -> int:
-        pass
+        pr = 0
+        pl = 0
+        result = []
+
+        for i in range(len(s)):
+            if s[i] == "R":
+                pr += 1
+
+            else:
+                pl += 1
+
+        return len(result)
 
 
 """
