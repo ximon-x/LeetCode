@@ -1,5 +1,5 @@
 function pivotArray(nums: number[], pivot: number): number[] {
-	let result: number[] = []
+    let result: number[] = []
 	result.push(pivot)
 
 	for (let i = 0; i < nums.length; i++) {
@@ -7,11 +7,14 @@ function pivotArray(nums: number[], pivot: number): number[] {
 
 		if (nums[i] < pivot) result.splice(pivotLocation, 0, nums[i])
 
-		else if (nums[i] > pivot) result.splice(pivotLocation + 1, 0, nums[i])
+		else if (nums[i] > pivot) result.push(nums[i])
 
 		else result.splice(pivotLocation, 0, nums[i])
 
 	}
-	result.splice
+
+	const pivotIndex = result.indexOf(pivot)
+	result.splice(pivotIndex, 1)
+
 	return result
 }
