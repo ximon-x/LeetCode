@@ -1,17 +1,16 @@
 function pivotArray(nums: number[], pivot: number): number[] {
-	let result: number[] = []
-	result.push(pivot)
+    let pivots: number[] = [];
+	let small: number[] = [];
+	let large: number[] = [];
 
-	for (let i = 0; i < nums.length; i++) {
-		const pivotLocation = result.indexOf(pivot)
+	for (let num of nums) {
+		if (num < pivot) small.push(num);
 
-		if (nums[i] < pivot) result.splice(pivotLocation, 0, nums[i])
+		else if (num > pivot) large.push(num);
 
-		else if (nums[i] > pivot) result.splice(pivotLocation + 1, 0, nums[i])
-
-		else result.splice(pivotLocation, 0, nums[i])
-
+		else pivots.push(num);
 	}
-	result.splice
-	return result
+	
+	const result = small.concat(pivots.concat(large));
+	return result;
 }
