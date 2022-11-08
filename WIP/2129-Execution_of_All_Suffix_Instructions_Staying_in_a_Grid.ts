@@ -17,6 +17,9 @@ function executeInstructions(
             break;
           } else {
             goodSteps++;
+            console.log(
+              `Incrementing goodSteps by 1 because of "L" matches ${s[j]}, currPos is ${currPos}`
+            );
           }
         }
 
@@ -26,6 +29,9 @@ function executeInstructions(
             break;
           } else {
             goodSteps++;
+            console.log(
+              `Incrementing goodSteps by 1 because of "R" matches ${s[j]}, currPos is ${currPos}`
+            );
           }
         }
 
@@ -35,19 +41,27 @@ function executeInstructions(
             break;
           } else {
             goodSteps++;
+            console.log(
+              `Incrementing goodSteps by 1 because of "U" matches ${s[j]}, currPos is ${currPos}`
+            );
           }
         }
 
         case "D": {
-          currPos[0]--;
+          currPos[0]++;
           if (currPos[0] > n - 1) {
             break;
           } else {
             goodSteps++;
+            console.log(
+              `Incrementing goodSteps by 1 because of "D" matches ${s[j]}, currPos is ${currPos}`
+            );
           }
         }
       }
     }
+
+    break;
 
     answer.push(goodSteps);
   }
@@ -56,3 +70,5 @@ function executeInstructions(
 }
 
 console.log(executeInstructions(3, [0, 1], "RRDDLU"));
+// Answer:  [ 4, 3, 3, 2, 1, 0 ]
+// Expected:  [1, 5, 4, 3, 1, 0]
