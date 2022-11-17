@@ -1,4 +1,6 @@
 function diagonalSort(mat: number[][]): number[][] {
+  // diagonalSort   -> Time { O(n^2), θ(n^2), Ω(n) } and Space { O(n), θ(n), Ω(n) }
+
   interface rel {
     [key: number]: number[];
   }
@@ -10,10 +12,11 @@ function diagonalSort(mat: number[][]): number[][] {
     for (let j = 0; j < mat[i].length; j++) {
       if (diagonals[i - j]) {
         diagonals[i - j].push(mat[i][j]);
-        diagonals[i - j].sort();
+        diagonals[i - j] = diagonals[i - j].sort((a, b) => {
+          return a - b;
+        });
       } else {
         diagonals[i - j] = [mat[i][j]];
-        diagonals[i - j].sort();
       }
     }
   }
@@ -30,11 +33,3 @@ function diagonalSort(mat: number[][]): number[][] {
 
   return result;
 }
-
-diagonalSort([
-  [11, 25, 66, 1, 69, 7],
-  [23, 55, 17, 45, 15, 52],
-  [75, 31, 36, 44, 58, 8],
-  [22, 27, 33, 25, 68, 4],
-  [84, 28, 14, 11, 5, 50],
-]);
