@@ -1,17 +1,20 @@
 class Solution:
+    # executeInstructions -> Time { O(n^2), θ(n^2), Ω(n) } and Space { O(n), θ(n), Ω(n) }
+
     def executeInstructions(self, n: int, startPos: list[int], s: str) -> list[int]:
         answer = []
 
         for i in range(len(s)):
             print(f"i is {i}")
-            curr_pos = startPos
+            curr_pos = startPos.copy()
+            print(f"This value shouldn't change {curr_pos}")
             good_steps = 0
 
             for j in range(i, len(s)):
                 print(f"\tj is {j}")
-                print(
-                    f"\t Instruction is {s[j]} and grid is [{curr_pos[0]} x {curr_pos[1]}]"
-                )
+                # print(
+                #     f"\t Instruction is {s[j]} and grid is [{curr_pos[0]} x {curr_pos[1]}]"
+                # )
 
                 match s[j]:
                     case "L":
