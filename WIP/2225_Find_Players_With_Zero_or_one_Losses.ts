@@ -1,35 +1,36 @@
 function findWinners(matches: number[][]): number[][] {
   let result: number[][];
 
-  let winners: number[] = [];
-  let losers: number[] = [];
-
   let noLossWinners: number[] = [];
   let oneLossWinners: number[] = [];
 
   for (let i = 0; i < matches.length; i++) {
-    winners.push(matches[i][0]);
-    losers.push(matches[i][1]);
-  }
+    let noLossCount = 0;
+    let oneLossCount = 0;
 
-  for (let i = 0; i < winners.length; i++) {
-    let count = 0;
+    for (let j = 0; j < matches.length; j++) {
+      // Test for no Loss
+      if (matches[i][0] === matches[j][1]) {
+        noLossCount++;
+      }
 
-    for (let j = 0; j < losers.length; j++) {
-      if (winners[i] === losers[j]) {
-        count++;
+      // Test for one Loss
+      if (matches[i][1] === matches[j][1]) {
+        oneLossCount++;
       }
     }
 
-    switch (count) {
-      case 0:
-        noLossWinners.push(winners[i]);
-      case 1:
-        oneLossWinners.push(winners[i]);
-    }
+    if (noLossCount === 0 && !noLossWinners.includes(matches[i][0]))
+      noLossWinners.push(matches[i][0]);
+
+    if (oneLossCount === 1 && !oneLossWinners.includes(matches[i][1]))
+      oneLossWinners.push(matches[i][1]);
   }
 
-  result = [noLossWinners, oneLossWinners];
+  result = [
+    noLossWinners.sort((a, b) => a - b),
+    oneLossWinners.sort((a, b) => a - b),
+  ];
 
   return result;
 }
