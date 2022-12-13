@@ -9,7 +9,6 @@ class ListNode {
 
 function pairSum(head: ListNode | null): number {
   const values: number[] = [];
-  const n = values.length;
   let maxDiff = 0;
 
   while (head) {
@@ -17,7 +16,8 @@ function pairSum(head: ListNode | null): number {
     head = head.next;
   }
 
-  // The bug happens here
+  const n = values.length;
+
   for (let i = 0; i < n / 2; i++) {
     const currDiff = values[i] + values[n - 1 - i];
 
