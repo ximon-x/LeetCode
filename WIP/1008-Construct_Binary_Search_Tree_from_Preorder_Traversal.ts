@@ -1,12 +1,3 @@
-class ListNode {
-    val: number
-    next: ListNode | null
-    constructor(val?: number, next?: ListNode | null) {
-        this.val = (val===undefined ? 0 : val)
-        this.next = (next===undefined ? null : next)
-    }
-}
-
 class TreeNode {
 	val: number
 	left: TreeNode | null
@@ -17,4 +8,8 @@ class TreeNode {
 		this.left = (left === undefined ? null: left)
 		this.right = (left === undefined ? null: right)
 	}
+}
+
+function bstFromPreorder(preorder: number[]): TreeNode | null {
+
 }
