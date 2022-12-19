@@ -18,3 +18,15 @@ class TreeNode {
 		this.right = (left === undefined ? null: right)
 	}
 }
+
+class Stack {
+	data: number[]
+	size: number
+
+	constructor(size: number) {
+		this.data = ()
+
+	}
+
+
+}
