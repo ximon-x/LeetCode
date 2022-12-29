@@ -43,7 +43,7 @@ class Stack:
 
     def peek(self):
         """
-        Returns the top non-None element in the Stack and Errors is Stack is empty.
+        Returns the top non-None element in the Stack and Errors if Stack is empty.
         =====   Time { O(1), θ(1), Ω(1) }   =====   Space { O(1), θ(1), Ω(1) }  =====
         """
         if self.__top == -1:
