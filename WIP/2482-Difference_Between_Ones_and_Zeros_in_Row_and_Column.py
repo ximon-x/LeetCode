@@ -1,12 +1,12 @@
 class Solution:
-    def oneMinusZeros(self, grid: list[list[int]]) -> list[list[int]]:
-        result = [[0] * len(grid[0])] * len(grid)
-
+    def onesMinusZeros(self, grid: list[list[int]]) -> list[list[int]]:
         ones_rows = [0] * len(grid)
         ones_columns = [0] * len(grid[0])
 
         zero_rows = [0] * len(grid)
         zero_columns = [0] * len(grid[0])
+
+        answer = []
 
         # Store sums of all rows and columns in respective collection
         for i in range(len(grid)):
@@ -21,15 +21,14 @@ class Solution:
 
         # Perform Computation
         for i in range(len(grid)):
+            row = []
+
             for j in range(len(grid[0])):
-                result[i][j] = (
+                col = (
                     ones_rows[i] + ones_columns[j] - zero_rows[i] - zero_columns[j]
                 )
 
-        # TODO: Fix computation logical bug
+                row.append(col)               
+            answer.append(row)
 
-        return result
-
-
-test = Solution()
-print(test.oneMinusZeros([[0, 1, 1], [1, 0, 1], [0, 0, 1]]))
+        return answer
