@@ -24,11 +24,9 @@ class Solution:
             row = []
 
             for j in range(len(grid[0])):
-                col = (
-                    ones_rows[i] + ones_columns[j] - zero_rows[i] - zero_columns[j]
-                )
+                col = ones_rows[i] + ones_columns[j] - zero_rows[i] - zero_columns[j]
 
-                row.append(col)               
+                row.append(col)
             answer.append(row)
 
         return answer
