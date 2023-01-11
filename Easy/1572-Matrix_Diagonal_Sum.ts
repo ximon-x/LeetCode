@@ -1,5 +1,6 @@
 function diagonalSum(mat: number[][]): number {
-  // diagonalSum    -> Time { O(n^2), θ(n^2), Ω(n) } and Space { O(1), θ(1), Ω(1) }
+  // diagonalSum  ->    Time { O(n^2), θ(n^2), Ω(n) } and Space { O(1), θ(1), Ω(1) }
+
   let answer: number = 0;
 
   for (let i = 0; i < mat.length; i++) {
