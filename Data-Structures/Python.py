@@ -4,6 +4,13 @@ class ListNode:
         self.next = next
 
 
+class TreeNode:
+    def __init__(self, val=0, left=None, right=None):
+        self.val = val
+        self.left = left
+        self.right = right
+
+
 class Stack:
     __items = []
     __top = -1
