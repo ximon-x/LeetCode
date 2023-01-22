@@ -1,4 +1,6 @@
 function numberOfBeams(bank: string[]): number {
+  // numberOfBeams ->    Time { O(n^2), θ(n^2), Ω(n) } and Space { O(1), θ(1), Ω(1) }
+
   let answer = 0;
   let prev = 0;
   let count = 0;

@@ -2,6 +2,7 @@ from operator import itemgetter
 
 
 class Solution:
+    # maxWidthOfVerticalArea    -> Time { O(n), θ(n), Ω(n) } and Space { O(1), θ(1), Ω(1) }
 
     def maxWidthOfVerticalArea(self, points: list[list[int]]):
         sorted_list = sorted(points, key=itemgetter(0))

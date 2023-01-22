@@ -6,6 +6,7 @@ class TreeNode:
 
 
 class Solution:
+    # getAllElements -> Time { O(2^n), θ(2^n), Ω(2^n) } and Space { O(nm), θ(nm), Ω(nm) }
     def getAllElements(self, root1: TreeNode, root2: TreeNode) -> list[int]:
         answer = []
 

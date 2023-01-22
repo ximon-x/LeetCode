@@ -1,15 +1,6 @@
-class TreeNode {
-  val: number;
-  left: TreeNode | null;
-  right: TreeNode | null;
-  constructor(val?: number, left?: TreeNode | null, right?: TreeNode | null) {
-    this.val = val === undefined ? 0 : val;
-    this.left = left === undefined ? null : left;
-    this.right = right === undefined ? null : right;
-  }
-}
-
 function bstToGst(root: TreeNode | null): TreeNode | null {
+  // getSum   -> Time { O(2n), θ(2n), Ω(n) } and Space { O(n), θ(n), Ω(n) }
+
   const getSum = (node: TreeNode | null, sum) => {
     if (!node) return sum;
 

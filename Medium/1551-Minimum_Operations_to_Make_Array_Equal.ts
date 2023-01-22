@@ -1,28 +1,30 @@
 function minOperations(n: number): number {
-	let arr: number[] = [];
-	let midIndex = 0;
-	let result = 0;
-	let mid = 0;
-	let i = 1;
+  // minOperations    -> Time { O(n), θ(n), Ω(n) } and Space { O(1), θ(1), Ω(1) }
 
-	while (arr.length != n) {
-		arr.push(i);
-		i += 2;
-	}
+  let arr: number[] = [];
+  let midIndex = 0;
+  let result = 0;
+  let mid = 0;
+  let i = 1;
 
-	if (arr.length % 2 === 1) {
-		midIndex = (arr.length - 1) / 2
-		mid = arr[midIndex]
-	} else {
-		midIndex = (arr.length) / 2
-		mid = arr[midIndex] - 1
-	}
+  while (arr.length != n) {
+    arr.push(i);
+    i += 2;
+  }
 
-	for (let i = 0; arr[i] < mid; i++) {
-		result += mid - arr[i]
-	}
+  if (arr.length % 2 === 1) {
+    midIndex = (arr.length - 1) / 2;
+    mid = arr[midIndex];
+  } else {
+    midIndex = arr.length / 2;
+    mid = arr[midIndex] - 1;
+  }
 
-	return result
+  for (let i = 0; arr[i] < mid; i++) {
+    result += mid - arr[i];
+  }
+
+  return result;
 }
 
-console.log(minOperations(6))
+console.log(minOperations(6));

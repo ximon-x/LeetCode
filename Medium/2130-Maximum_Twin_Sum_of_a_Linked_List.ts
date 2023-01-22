@@ -8,6 +8,8 @@ class ListNode {
 }
 
 function pairSum(head: ListNode | null): number {
+  // pairSum -> Time { O(n^2), θ(n^2), Ω(n) } and Space { O(n), θ(n), Ω(n) }
+
   const values: number[] = [];
   let maxDiff = 0;
 

@@ -2,6 +2,8 @@ class Solution:
     def checkArithmeticSubarrays(
         self, nums: list[int], l: list[int], r: list[int]
     ) -> list[bool]:
+        # checkArithmeticSubarrays    -> Time { O(n^2), θ(n^2), Ω(n) } and Space { O(1), θ(1), Ω(1) }
+
         result = []
         m = len(r)
 

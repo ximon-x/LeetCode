@@ -1,16 +1,16 @@
 function pivotArray(nums: number[], pivot: number): number[] {
-    let pivots: number[] = [];
-	let small: number[] = [];
-	let large: number[] = [];
+  // pivotArray -> Time { O(n), θ(n), Ω(n) } and Space { O(n), θ(n), Ω(n) }
 
-	for (let num of nums) {
-		if (num < pivot) small.push(num);
+  let pivots: number[] = [];
+  let small: number[] = [];
+  let large: number[] = [];
 
-		else if (num > pivot) large.push(num);
+  for (let num of nums) {
+    if (num < pivot) small.push(num);
+    else if (num > pivot) large.push(num);
+    else pivots.push(num);
+  }
 
-		else pivots.push(num);
-	}
-	
-	const result = small.concat(pivots.concat(large));
-	return result;
+  const result = small.concat(pivots.concat(large));
+  return result;
 }

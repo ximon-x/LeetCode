@@ -1,4 +1,6 @@
 class Solution:
+    # onesMinusZeros  -> Time { O(n^2), θ(n^2), Ω(n^2) } and Space { O(n), θ(n), Ω(n) }
+
     def onesMinusZeros(self, grid: list[list[int]]) -> list[list[int]]:
         ones_rows = [0] * len(grid)
         ones_columns = [0] * len(grid[0])

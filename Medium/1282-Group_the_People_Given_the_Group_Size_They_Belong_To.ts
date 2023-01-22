@@ -3,6 +3,8 @@ interface IHash {
 }
 
 function groupThePeople(groupSizes: number[]): number[][] {
+  // groupThePeople   -> Time { O(n), θ(n), Ω(n) } and Space { O(n), θ(n), Ω(n) }
+
   const result: number[][] = [];
   const hash: IHash = {};
 

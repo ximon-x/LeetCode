@@ -1,4 +1,6 @@
 function garbageCollection(garbage: string[], travel: number[]): number {
+  // lastIdx    -> Time { O(2^n), θ(2^n), Ω(n) } and Space { O(2n), θ(2n), Ω(2n) }
+
   const type = ["G", "P", "M"];
 
   let total = garbage.join("").length;

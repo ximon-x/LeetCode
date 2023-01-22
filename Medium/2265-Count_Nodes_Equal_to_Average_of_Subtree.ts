@@ -1,15 +1,6 @@
-class TreeNode {
-  val: number;
-  left: TreeNode | null;
-  right: TreeNode | null;
-  constructor(val?: number, left?: TreeNode | null, right?: TreeNode | null) {
-    this.val = val === undefined ? 0 : val;
-    this.left = left === undefined ? null : left;
-    this.right = right === undefined ? null : right;
-  }
-}
-
 function averageOfSubtree(root: TreeNode | null): number {
+  // dfs    -> Time { O(2^n), θ(2^n), Ω(n) } and Space { O(2n), θ(2n), Ω(2n) }
+
   let result = 0;
 
   function dfs(node) {

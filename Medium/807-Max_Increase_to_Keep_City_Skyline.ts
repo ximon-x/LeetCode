@@ -1,4 +1,6 @@
 function maxIncreaseKeepingSkyline(grid: number[][]): number {
+  // maxIncreaseKeepingSkyline  -> Time { O(n^2), θ(n^2), Ω(2n) } and Space { O(1), θ(1), Ω(1) }
+
   let col: number[] = [];
   let row: number[] = [];
 
