@@ -1,5 +1,6 @@
 function removeOuterParentheses(s: string): string {
   // removeOuterParentheses  -> Time { O(n), θ(n), Ω(1) } and Space { O(n), θ(n), Ω(1) }
+
   let result: string = "";
   let pointer: number = 0;
 

@@ -1,4 +1,6 @@
 class Solution:
+    # sortSentence  -> Time { O(n^2), θ(n^2), Ω(n) } and Space { O(1), θ(1), Ω(1) }
+
     def sortSentence(self, s: str) -> str:
         answer = ""
         words = s.split(" ")

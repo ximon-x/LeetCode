@@ -1,8 +1,9 @@
 class Solution:
     # isPalindrome    -> Time { O(n), θ(n), Ω(1) } and Space { O(1), θ(1), Ω(1) }
 
-    def isPalindrome(self, x: int) -> bool:
-        x, n = str(x), len(str(x)) - 1
+    def isPalindrome(self, x) -> bool:
+        x = str(x)
+        n = len(str(x)) - 2
         is_palindrome = True
 
         for i in range(len(x)):

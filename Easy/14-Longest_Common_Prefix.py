@@ -1,7 +1,7 @@
 class Solution:
     # longestCommonPrefix   -> Time { O(n^2), θ(n^2), Ω(n) } and Space { O(1), θ(1), Ω(1) }
 
-    def longestCommonPrefix(self, strs: list[str]) -> str:
+    def longestCommonPrefix(self, strs: list[str]) -> str | None:
         prefix = ""
         if len(strs) == 0:
             return None

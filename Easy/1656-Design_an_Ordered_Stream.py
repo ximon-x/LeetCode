@@ -1,9 +1,11 @@
 class OrderedStream:
+    # insert    -> Time { O(1), θ(1), Ω(1) } and Space { O(1), θ(1), Ω(1) }
+
     def __init__(self, n: int):
         self.pointer = 0
         self.values = [None] * n
 
-    def insert(self, idKey: int, value: str) -> list[str]:
+    def insert(self, idKey: int, value) -> list[str]:
         response = []
         self.values[idKey - 1] = value
 

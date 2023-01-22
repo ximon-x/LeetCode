@@ -1,7 +1,7 @@
 class Solution:
     # countKDifference    -> Time { O(n^2), θ(n^2), Ω(n) } and Space { O(1), θ(1), Ω(1) }
 
-    def countKDifference(self, nums: List[int], k: int) -> int:
+    def countKDifference(self, nums: list[int], k: int) -> int:
         count = 0
 
         for i in range(len(nums)):
@@ -10,4 +10,3 @@ class Solution:
                     count += 1
 
         return count
-

@@ -8,7 +8,7 @@ class Solution:
 
         result = ""
 
-        for word in words: 
+        for word in words:
             result += word + " "
 
         return result[:-1]

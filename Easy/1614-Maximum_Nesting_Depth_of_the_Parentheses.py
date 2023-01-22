@@ -2,7 +2,7 @@ class Stack:
     items = []
 
     def init(self, item):
-        self.items.push(item)
+        self.items.append(item)
 
     def pop(self):
         if len(self.items) == 0:

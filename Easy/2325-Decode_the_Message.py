@@ -3,6 +3,8 @@ import string
 
 class Solution:
     def decodeMessage(self, key: str, message: str) -> str:
+        # decodeMessage   -> Time { O(n), θ(n), Ω(1) } and Space { O(1), θ(1), Ω(1) }
+
         alphabets = list(string.ascii_lowercase)
         alphabets_pointer = 0
         keyMap = {}

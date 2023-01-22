@@ -8,5 +8,5 @@ class TreeNode:
 class Solution:
     # checkTree    -> Time { O(1), θ(1), Ω(1) } and Space { O(1), θ(1), Ω(1) }
 
-    def checkTree(self, root: TreeNode) -> bool:
+    def checkTree(self, root) -> bool:
         return root.val == root.left.val + root.right.val

@@ -1,5 +1,6 @@
 class Solution:
     # countPoints    -> Time { O(n), θ(n), Ω(n) } and Space { O(1), θ(1), Ω(1) }
+
     def countPoints(self, rings: str) -> int:
         perfect_rods = 0
         rods = {

@@ -1,7 +1,7 @@
 class Solution:
     # minimumSum    -> Time { O(n), θ(n), Ω(1) } and Space { O(1), θ(1), Ω(1) }
 
-    def minimumSum(self, num: int) -> int:
+    def minimumSum(self, num) -> int:
         dig, num = [], str(num)
 
         for i in range(len(num)):

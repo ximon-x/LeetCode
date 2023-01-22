@@ -1,4 +1,9 @@
+import string
+
+
 class Solution:
+    # checkIfPangram -> Time { O(n), θ(n), Ω(1) } and Space { O(1), θ(1), Ω(1) }
+
     def checkIfPangram(self, sentence: str) -> bool:
         alphabets = list(string.ascii_lowercase)
 

@@ -7,7 +7,7 @@ class ListNode:
 class Solution:
     # getDecimalValue   -> Time { O(n), θ(n), Ω(1) } and Space { O(n), θ(n), Ω(1) }
 
-    def getDecimalValue(self, head: ListNode) -> int:
+    def getDecimalValue(self, head) -> int:
         answer = ""
 
         while head != None:

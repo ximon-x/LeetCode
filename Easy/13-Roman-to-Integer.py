@@ -8,8 +8,10 @@ class Solution:
         for i in range(len(s)):
             if i != len(s) - 1 and values[s[i]] < values[s[i + 1]]:
                 answer += values[s[i + 1]] - values[s[i]]
+
             elif i != 0 and values[s[i]] > values[s[i - 1]]:
                 pass
+
             else:
                 answer += values[s[i]]
 
