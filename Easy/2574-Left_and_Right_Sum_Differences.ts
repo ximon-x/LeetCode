@@ -1,4 +1,6 @@
 function leftRigthDifference(nums: number[]): number[] {
+  // Time { O(3n), θ(3n), Ω(3n) } and Space { O(1), θ(1), Ω(1) }
+
   let answer: number[] = new Array(nums.length);
   let leftSum: number[] = new Array(nums.length);
   let rightSum: number[] = new Array(nums.length);
