@@ -1,7 +1,7 @@
-function leftRightDifference(nums: number[]): number[] {
-  let answer: number[] = [];
-  let leftSum: number[] = [];
-  let rightSum: number[] = [];
+function leftRigthDifference(nums: number[]): number[] {
+  let answer: number[] = new Array(nums.length);
+  let leftSum: number[] = new Array(nums.length);
+  let rightSum: number[] = new Array(nums.length);
 
   // Left Sum
   for (let i = 0; i < nums.length; i++) {
@@ -11,20 +11,20 @@ function leftRightDifference(nums: number[]): number[] {
       leftSum[i] = nums[i - 1] + leftSum[i - 1];
     }
   }
-  console.log(leftSum);
 
   // Right Sum
   for (let i = nums.length - 1; i > -1; i--) {
-    if (i == nums.length) {
-      rightSum[nums.length] = 0;
+    if (i == nums.length - 1) {
+      rightSum[nums.length - 1] = 0;
     } else {
       rightSum[i] = nums[i + 1] + rightSum[i + 1];
     }
   }
-  console.log(rightSum);
 
-  //
+  // Computing answer:
+  for (let i = 0; i < answer.length; i++) {
+    answer[i] = Math.abs(leftSum[i] - rightSum[i]);
+  }
+
   return answer;
 }
-
-leftRightDifference([10, 4, 8, 3]);
