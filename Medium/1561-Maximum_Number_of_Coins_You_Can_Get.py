@@ -5,7 +5,12 @@ class Solution:
         answer = 0
         piles.sort()
 
-        for i in range(1, len(piles), 3):
+        my_coins_num = int(len(piles) / 3)
+        i = len(piles) - 2
+
+        while my_coins_num != 0:
             answer += piles[i]
+            my_coins_num -= 1
+            i -= 2
 
         return answer
