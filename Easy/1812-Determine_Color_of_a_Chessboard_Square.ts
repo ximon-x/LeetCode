@@ -16,16 +16,14 @@ function squareIsWhite(coordinates: string): boolean {
   if (file % 2 == 1) {
     if (rank % 2 == 1) {
       return false;
-    } else return true;
+    } else {
+      return true;
+    }
   } else {
     if (rank % 2 == 0) {
-      if (rank % 2 == 0) {
-        return false;
-      } else return true;
+      return false;
+    } else {
+      return true;
     }
   }
-
-  return false;
 }
-
-console.log(squareIsWhite("h3"));
