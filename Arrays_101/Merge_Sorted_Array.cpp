@@ -1,4 +1,3 @@
-#include <iostream>
 #include <vector>
 using namespace std;
 
@@ -9,7 +8,7 @@ using namespace std;
 class Solution {
    public:
     void merge(vector<int>& nums1, int m, vector<int>& nums2, int n) {
-        for (uint i = nums1.size(); i > 0; i--) {
+        for (size_t i = nums1.size(); i > 0; i--) {
             if (n == 0) {
                 nums1[i - 1] = nums1[m - 1];
                 m--;

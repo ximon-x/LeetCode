@@ -1,40 +1,34 @@
-#include <cstddef>
-#include <iostream>
 #include <vector>
-#include "../utils/helpers.cpp"
 
 using namespace std;
+
+// Algorithm Analysis
+//      Time Complexity:     Ο(n + km) Ω(n + k)
+//      Space Complexity:    Ο(1) Ω(1) Θ(1)
 
 class Solution {
    public:
     int removeElement(vector<int>& nums, int val) {
         size_t k = 0;
 
-        size_t m = 0;
-        size_t n = nums.size() - 1;
-
-        while (m < nums.size()) {
-            if (nums[m] == val) {
-                cout << "Swapping " << nums[m] << "with " << nums[n] << "\n";
-
-                int temp = nums[m];
-                nums[m] = nums[n];
-                nums[n] = temp;
-                n--;
+        // Find number of unique numbers.
+        for (size_t i = 0; i < nums.size(); i++) {
+            if (nums[i] != val) {
+                k++;
             }
-            m++;
+        }
 
-            Helpers::printContainer(nums);
+        // Populate nums[i..k] with unique numbers.
+        size_t i = 0;
+        while (i < k) {
+            for (size_t j = i; j < nums.size(); j++) {
+                if (nums[j] != val) {
+                    nums[i] = nums[j];
+                    i++;
+                }
+            }
         }
 
         return k;
     }
 };
-
-int main() {
-    Solution solution{};
-    vector<int> numbers = {3, 2, 2, 3};
-
-    int answer = solution.removeElement(numbers, 2);
-    cout << "Answer: " << answer << "\n";
-}
