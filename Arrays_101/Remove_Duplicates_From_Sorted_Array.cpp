@@ -1,6 +1,6 @@
 #include <cmath>
-#include <cstddef>
 #include <vector>
+#include "../utils/helpers.cpp"
 
 using namespace std;
 
@@ -9,11 +9,21 @@ class Solution {
     void modifyArray(int& p, int& q, vector<int>& nums) {
         // TODO: Replace items nums(p, q) with nums[q, q + q-p] but consider out
         // of bounds error.
+        while (p < q) {
+            nums[p] = nums[q + q - p];
+            p++;
+        }
+
+        while (q < nums.size()) {
+            nums[q] = -INFINITY;
+            q++;
+        }
     }
 
     int removeDuplicates(vector<int>& nums) {
-        if (nums.size() < 2)
+        if (nums.size() < 2) {
             return nums.size();
+        }
 
         // Number of unique items.
         int k = 0;
@@ -32,6 +42,7 @@ class Solution {
 
                 // Remove all numbers between index p and q
                 modifyArray(p, q, nums);
+                Helpers::printContainer(nums);
 
                 p++;
                 q = p + 1;
@@ -43,3 +54,10 @@ class Solution {
         return k;
     }
 };
+
+int main() {
+    vector<int> nums = {0, 0, 1, 1, 1, 2, 2, 3, 3, 4};
+    Solution solution;
+
+    cout << solution.removeDuplicates(nums);
+}
