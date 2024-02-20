@@ -14,7 +14,7 @@ As of 7th August, 2023... I started solving:
 
 I am following the "Explore Card Track" and this will be my training path:
 
-### First Layer
+### First Layer (C++)
 
 - [ ] Arrays 101
 - [ ] Linked List
@@ -28,7 +28,7 @@ I am following the "Explore Card Track" and this will be my training path:
 - [ ] Recursion
 - [ ] Binary Search
 
-### Second and Third Layers
+### Second and Third Layers (TypeScript)
 
 - [ ] Binary Tree
 - [ ] Binary Search Tree
@@ -39,7 +39,7 @@ I am following the "Explore Card Track" and this will be my training path:
 
 - [ ] Recursion II
 
-### Fourth Layers
+### Fourth Layers (Python3)
 
 - [ ] Dynamic Programming
 - [ ] Graph

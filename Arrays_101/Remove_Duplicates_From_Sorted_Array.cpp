@@ -2,7 +2,7 @@
 
 using namespace std;
 // Algorithm Analysis
-//      Time Complexity:     Ο(mn) Ω(1)
+//      Time Complexity:     Ο(n) Ω(n) Θ(n)
 //      Space Complexity:    Ο(1) Ω(1) Θ(1)
 
 class Solution {
@@ -11,23 +11,13 @@ class Solution {
         if (nums.size() < 2)
             return nums.size();
 
-        int k = 1;
+        int k = 0;
 
-        for (size_t p = 0; p < nums.size() - 1; p++) {
-            for (size_t q = p + 1; q < nums.size(); q++) {
-                if (nums[p] == nums[q]) {
-                    continue;
-                }
-
-                if (nums[p] < nums[q]) {
-                    nums[p + 1] = nums[q];
-                    k++;
-                    break;
-                }
-            };
-
-            if (nums[p] == nums[nums.size() - 1])
-                break;
+        for (size_t i = 0; i < nums.size(); i++) {
+            if (i == 0 || nums[i] != nums[i - 1]) {
+                nums[k] = nums[i];
+                k++;
+            }
         }
 
         return k;
