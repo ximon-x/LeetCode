@@ -1,0 +1,157 @@
+#+title: Linked Lists
+#+author: Simon Samuel
+#+date: 20th April, 2024
+
+Linked list are linear data structures in which each item of the list holds data and a reference to another list node, this linking is how it keeps relationship to other items in the list.
+
+There are two types of linked lists:
+    1. Singly Linked List
+    2. Doubly Linked List  
+
+* Singly Linked List
+Each node in the singly linked list contains not only the value but the also a reference field to the next node. By this way, the list is able to store the values in a sequence. Here is the structure for creating a node in the linked list.
+
+#+begin_src cpp
+#include <cstddef>
+using namespace std;
+
+struct ListNode {
+    int data;
+    // We store the memory address of the next node here. 
+    ListNode* next;
+
+
+    ListNode(int value) {
+        this->data = value;
+        this->next = NULL;
+    }
+}
+#+end_src cpp
+
+** Operations
+Unlike the array, we're not able to access elements in constant time and have to iterate through the entire list in order to get the data we want. This makes accessing data in a linked list a /O(n)/ operation.
+
+*** Inserting a new Node
+Despite it's poor data access capabilities, inserting an item into the any part of the linked list is relatively straightforward. You simply have to:
+
+    1. Set the ~next~ attribute of the new node to the ~next~ of the node before it.
+    2. Set the ~next~ of the node before the new node to the new node.   
+
+The time complexity for inserting into a linked list is /O(1)/. 
+
+#+begin_src cpp
+#include <cstddef>
+#include <iostream>
+
+using namespace std;
+
+struct ListNode {
+    int data;
+    ListNode* next;
+
+    ListNode(int value) {
+        this->data = value;
+        this->next = NULL;
+    }
+
+    void displayList() {
+        ListNode* node = this;
+
+        cout << "The List is [";
+        while (node) {
+            cout << " " << node->data;
+            node = node->next;
+        }
+
+        cout << " ].\n";
+    }
+};
+
+int main() {
+    // Create 3 nodes.
+    ListNode head = ListNode(15);
+    ListNode second = ListNode(14);
+    ListNode third = ListNode(9);
+
+    // Link up the nodes to form a linked list.
+    head.next = &second;
+    second.next = &third;
+
+    // Call helper method to display the old list elements.
+    head.displayList();
+
+    // Create a new node that will be inserted into the list.
+    ListNode newNode = ListNode(18);
+
+    // Set the next of the new node to point to the next of the node it's
+    // replacing.
+    newNode.next = head.next;
+
+    // Set the next of the previous node to this new node.
+    head.next = &newNode;
+
+    // Print out the modified array.
+    head.displayList();
+};
+#+end_src cpp
+
+
+*** Deleting a node
+Similiarly to how it was easy to insert a node to the linked list, deleting a node is equally as straightforward.
+
+#+begin_src cpp
+#include <cstddef>
+#include <iostream>
+
+using namespace std;
+
+struct ListNode {
+    int data;
+    ListNode* next;
+
+    ListNode(int value) {
+        this->data = value;
+        this->next = NULL;
+    }
+
+    void displayList() {
+        ListNode* node = this;
+
+        cout << "The List is [";
+        while (node) {
+            cout << " " << node->data;
+            node = node->next;
+        }
+
+        cout << " ].\n";
+    }
+};
+
+int main() {
+    // Create 5 nodes.
+    ListNode head = ListNode(15);
+    ListNode second = ListNode(14);
+    ListNode third = ListNode(9);
+    ListNode fourth = ListNode(29);
+    ListNode fifth = ListNode(88);
+
+    // Link up the nodes to form a linked list.
+    head.next = &second;
+    second.next = &third;
+    third.next = &fourth;
+    fourth.next = &fifth;
+
+    // Call helper method to display the old list elements.
+    head.displayList();
+
+    // To delete the third node, we simply have to set the next of the
+    // node before the third node to the next of the third node.
+    second.next = third.next;
+
+    // Print out the modified array.
+    head.displayList();
+};
+#+end_src cpp
+
+
+

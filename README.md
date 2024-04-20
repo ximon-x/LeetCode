@@ -38,8 +38,12 @@ I am following the "Explore Card Track" and this will be my training path:
 ### Third Layers
 
 - [ ] Recursion II
+- [ ] Dynamic Programming
+- [ ] Graph
 
 ### Fourth Layers (Python3)
 
-- [ ] Dynamic Programming
-- [ ] Graph
+- [ ] Database & SQL
+- [ ] System Design
+- [ ] Machine Learning 101
+- [ ] Decision Tree
