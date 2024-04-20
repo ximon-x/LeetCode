@@ -268,3 +268,74 @@ int main() {
 
 *** Binary Search
 This is a faster search algorithm as it divides the array in half in every iteration but its major drawback is that the array must be sorted for it to work. 
+
+
+* In-Place Operations
+In-place operations are algorithms that modify the input array itself, they do not use additional space earning them a space complexity of /O(1)/ as new storage will be allocated in memory.
+
+** The Two Pointer Approach
+This is a popular style for efficiently solving problems that require in-place solutions. Here is a popular example of such a problem.
+
+#+begin_src markdown
+  *Problem*:  Remove the duplicates such that each element appears only once.
+  *Input*:    A sorted integer array => [0, 0, 1, 1, 1, 2, 2, 3, 3, 4]
+  *Output*:   A sorted integer array with no duplicates => [0, 1, 2, 3, 4]
+#+end_src
+
+This problem is relatively easy to solve when you create a new array and only clone single items but there is a better and more efficient way to solve the problem without creating a new array. To solve it in-place, we can employ the Two Pointer Approach:
+
+    1. We create two variables: ~readPointer~ and ~writePointer~.
+    2. The ~writePointer~ is responsible for keeping track of our current index for us to insert data into.
+    3. The ~readPointer~ is responsible for reading the items in the array.
+
+#+begin_src cpp
+#include "iostream"
+using namespace std;
+
+int removeDuplicates(int A[], int capacity) {
+    // Edge Case
+    if (capacity == 0)
+        return 0;
+
+    // The first element should not be written to.
+    int writePointer = 1;
+    int readPointer = 1;
+
+    while (readPointer < capacity) {
+        // If the current number being read is not same as the previous number,
+        // then it is not a duplicate.
+        if (A[readPointer] != A[readPointer - 1]) {
+            // Save that value into the array and increase the write index.
+            A[writePointer] = A[readPointer];
+            writePointer++;
+        }
+
+        readPointer++;
+    }
+
+    // The writePointer is the length as it only has the number of elements that
+    // are not duplicates.
+    return writePointer;
+};
+
+int main() {
+    // Create an array that holds our input integers.
+    int A[10] = {0, 0, 1, 1, 1, 2, 2, 3, 3, 4};
+
+    // We store the capacity of the array.
+    int n = sizeof(A) / sizeof(int);
+
+    // Get back the new length of the subarray with no duplicates and delete the
+    // rest.
+    int length = removeDuplicates(A, n);
+
+    cout << "The new array is { ";
+    for (int i = 0; i < length; i++) {
+        cout << A[i] << ", ";
+    }
+    cout << "}."
+         << "\n";
+}
+#+end_src cpp
+
+This solution is optimal as we only check each item once so it has a time complexity of /O(n)/ and a space complexity of /O(1)/.
