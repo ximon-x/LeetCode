@@ -1,4 +1,5 @@
 export {};
+
 type F = (x: number) => number;
 
 // Algorithm Analysis
