@@ -1,3 +1,5 @@
+export {};
+
 type Fn = (accum: number, curr: number) => number;
 
 // Algorithm Analysis
