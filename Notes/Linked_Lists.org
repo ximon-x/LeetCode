@@ -2,14 +2,14 @@
 #+author: Simon Samuel
 #+date: 20th April, 2024
 
-Linked list are linear data structures in which each item of the list holds data and a reference to another list node, this linking is how it keeps relationship to other items in the list.
+Linked lists are linear data structures in which each item of the list holds data and a reference to another list node, this linking is how it keeps a relationship to other items in the list.
 
 There are two types of linked lists:
     1. Singly Linked List
     2. Doubly Linked List  
 
 * Singly Linked List
-Each node in the singly linked list contains not only the value but the also a reference field to the next node. By this way, the list is able to store the values in a sequence. Here is the structure for creating a node in the linked list.
+Each node in the singly linked list contains not only the value but also a reference field to the next node. In this way, the list can store the values in a sequence. Here is the structure for creating a node in the linked list.
 
 #+begin_src cpp
 #include <cstddef>
@@ -29,10 +29,10 @@ struct ListNode {
 #+end_src cpp
 
 ** Operations
-Unlike the array, we're not able to access elements in constant time and have to iterate through the entire list in order to get the data we want. This makes accessing data in a linked list a /O(n)/ operation.
+Unlike the array, we're not able to access elements in constant time and have to iterate through the entire list to get the data we want. This makes accessing data in a linked list a /O(n)/ operation.
 
 *** Inserting a new Node
-Despite it's poor data access capabilities, inserting an item into the any part of the linked list is relatively straightforward. You simply have to:
+Despite its poor data access capabilities, inserting an item into any part of the linked list is relatively straightforward. You simply have to:
 
     1. Set the ~next~ attribute of the new node to the ~next~ of the node before it.
     2. Set the ~next~ of the node before the new node to the new node.   
@@ -97,7 +97,7 @@ int main() {
 
 
 *** Deleting a node
-Similiarly to how it was easy to insert a node to the linked list, deleting a node is equally as straightforward.
+Similar to how it was easy to insert a node into the linked list, deleting a node is equally as straightforward.
 
 #+begin_src cpp
 #include <cstddef>
@@ -152,6 +152,4 @@ int main() {
     head.displayList();
 };
 #+end_src cpp
-
-
 
