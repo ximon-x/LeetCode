@@ -1,4 +1,5 @@
 #include <cstddef>
+#include <cstdlib>
 #include <cstring>
 #include <iostream>
 
@@ -26,15 +27,12 @@ class MyLinkedList {
     }
 
     int get(int index) {
-        if (this->head == nullptr)
-            return -1;
-
-        if (index >= this->size)
+        if (index < 0 || index >= this->size)
             return -1;
 
         ListNode* curr = this->head;
 
-        for (int i = 0; i < this->size - 1; i++) {
+        for (int i = 0; i < index; i++) {
             curr = curr->next;
         }
 
@@ -58,49 +56,123 @@ class MyLinkedList {
 
         ListNode* curr = this->head;
 
-        while (curr) {
+        while (curr->next != nullptr) {
             curr = curr->next;
         }
+
+        curr->next = newNode;
     }
 
-    void addAtIndex(int index, int val) {}
+    void addAtIndex(int index, int val) {
+        if (index < 0 || index > this->size)
+            return;
 
-    void deleteAtIndex(int index) {}
+        if (index == 0) {
+            this->addAtHead(val);
+            return;
+        }
+
+        if (index == this->size) {
+            this->addAtTail(val);
+            return;
+        }
+
+        ListNode* newNode = new ListNode{val};
+        ListNode* curr = this->head;
+
+        for (size_t i = 0; i < index - 1; i++) {
+            curr = curr->next;
+        }
+
+        newNode->next = curr->next;
+        curr->next = newNode;
+    }
+
+    void deleteAtIndex(int index) {
+        if (index < 0 || index >= this->size)
+            return;
+
+        if (index == 0) {
+            ListNode* temp = this->head;
+            this->head = this->head->next;
+            delete temp;
+            return;
+        }
+
+        ListNode* curr = this->head;
+
+        for (size_t i = 0; i < index - 1; i++) {
+            curr = curr->next;
+        }
+
+        ListNode* temp = curr->next;
+        curr->next = curr->next->next;
+        delete temp;
+    }
 
     void displayList() {
         ListNode* node = this->head;
 
-        cout << "The List is [";
+        cout << "The List is [ ";
         while (node) {
-            cout << " " << node->val;
+            cout << node->val << " -> ";
             node = node->next;
         }
 
-        cout << " ].\n";
+        cout << "nullptr ].\n";
     }
+
+    void displayNodeAddresses() {
+        ListNode* node = this->head;
+
+        cout << "The Addresses of the nodes are [ ";
+        while (node) {
+            cout << &(*node) << " -> ";
+            node = node->next;
+        }
+
+        cout << "nullptr ].\n";
+    }
+
+    // ~MyLinkedList() {
+    //     ListNode* node = this->head;
+    //
+    //     while (node) {
+    //         ListNode* temp = this->head;
+    //         temp = node;
+    //         node = node->next;
+    //
+    //         delete temp;
+    //     }
+    // }
 };
 
 int main() {
     MyLinkedList linkedList = MyLinkedList();
 
-    linkedList.addAtHead(1);
+    linkedList.addAtHead(1);  // [1]
     linkedList.displayList();
 
-    linkedList.addAtHead(5);
+    linkedList.addAtHead(5);  // [5, 1]
     linkedList.displayList();
 
-    linkedList.addAtHead(7);
+    linkedList.addAtHead(7);  // [7, 5, 1]
     linkedList.displayList();
 
-    linkedList.addAtTail(3);
+    linkedList.addAtTail(3);  // [7, 5, 1, 3]
     linkedList.displayList();
 
-    linkedList.addAtIndex(1, 2);
+    linkedList.addAtIndex(1, 2);  // [7, 2, 5, 1, 3]
     linkedList.displayList();
 
-    int val = linkedList.get(0);
-    cout << "Retrieved at index 0: " << val << ".\n";
+    linkedList.deleteAtIndex(0);  // [2, 5, 1, 3]
+    linkedList.displayList();
 
-    int newVal = linkedList.get(2);
-    cout << "Retrieved at index 2: " << newVal << ".\n";
+    linkedList.deleteAtIndex(1);  // [2, 1, 3]
+    linkedList.displayList();
+
+    linkedList.displayNodeAddresses();
+
+    int newVal = linkedList.get(0);
+    cout << "Retrieved at index 0: " << newVal << ".\n";
 }
