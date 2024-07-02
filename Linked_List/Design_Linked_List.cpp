@@ -148,6 +148,30 @@ class MyLinkedList {
 };
 
 int main() {
+    MyLinkedList myLinkedList{};
+
+    myLinkedList.addAtHead(1);
+    myLinkedList.displayList();  // linked list: 1
+
+    myLinkedList.addAtTail(3);
+    myLinkedList.displayList();  // linked list: 1 -> 3
+
+    myLinkedList.addAtIndex(1, 2);
+    myLinkedList.displayList();  // linked list: 1 -> 2 -> 3
+
+    cout << "Retrieved at index 1: " << myLinkedList.get(1)
+         << ".\n";  // return 2
+
+    myLinkedList.deleteAtIndex(1);
+    myLinkedList.displayList();  // linked list: 1 -> 3
+
+    cout << "Retrieved at index 1: " << myLinkedList.get(1)
+         << ".\n";  // return 3
+
+    cout << "\n\n"
+         << "=================================================================="
+         << "\n\n";
+
     MyLinkedList linkedList = MyLinkedList();
 
     linkedList.addAtHead(1);  // [1]
