@@ -52,6 +52,11 @@ class MyLinkedList {
     }
 
     void addAtTail(int val) {
+        if (this->size == 0) {
+            this->addAtHead(val);
+            return;
+        }
+
         ListNode* newNode = new ListNode{val};
 
         ListNode* curr = this->head;
@@ -61,6 +66,7 @@ class MyLinkedList {
         }
 
         curr->next = newNode;
+        this->size++;
     }
 
     void addAtIndex(int index, int val) {
@@ -86,6 +92,8 @@ class MyLinkedList {
 
         newNode->next = curr->next;
         curr->next = newNode;
+
+        this->size++;
     }
 
     void deleteAtIndex(int index) {
@@ -108,6 +116,8 @@ class MyLinkedList {
         ListNode* temp = curr->next;
         curr->next = curr->next->next;
         delete temp;
+
+        this->size--;
     }
 
     void displayList() {
@@ -134,44 +144,21 @@ class MyLinkedList {
         cout << "nullptr ].\n";
     }
 
-    // ~MyLinkedList() {
-    //     ListNode* node = this->head;
-    //
-    //     while (node) {
-    //         ListNode* temp = this->head;
-    //         temp = node;
-    //         node = node->next;
-    //
-    //         delete temp;
-    //     }
-    // }
+    ~MyLinkedList() {
+        ListNode* node = this->head;
+
+        while (node) {
+            ListNode* temp = node;
+            node = node->next;
+
+            delete temp;
+        }
+
+        cout << "Cleaned up memory" << endl;
+    }
 };
 
 int main() {
-    MyLinkedList myLinkedList{};
-
-    myLinkedList.addAtHead(1);
-    myLinkedList.displayList();  // linked list: 1
-
-    myLinkedList.addAtTail(3);
-    myLinkedList.displayList();  // linked list: 1 -> 3
-
-    myLinkedList.addAtIndex(1, 2);
-    myLinkedList.displayList();  // linked list: 1 -> 2 -> 3
-
-    cout << "Retrieved at index 1: " << myLinkedList.get(1)
-         << ".\n";  // return 2
-
-    myLinkedList.deleteAtIndex(1);
-    myLinkedList.displayList();  // linked list: 1 -> 3
-
-    cout << "Retrieved at index 1: " << myLinkedList.get(1)
-         << ".\n";  // return 3
-
-    cout << "\n\n"
-         << "=================================================================="
-         << "\n\n";
-
     MyLinkedList linkedList = MyLinkedList();
 
     linkedList.addAtHead(1);  // [1]
