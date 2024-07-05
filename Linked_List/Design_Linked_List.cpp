@@ -27,8 +27,11 @@ class MyLinkedList {
     }
 
     int get(int index) {
-        if (index < 0 || index >= this->size)
+        if (index < 0 || index >= this->size) {
+            cout << "Invalid Index"
+                 << "\n";
             return -1;
+        }
 
         ListNode* curr = this->head;
 
@@ -36,6 +39,7 @@ class MyLinkedList {
             curr = curr->next;
         }
 
+        cout << "The value at index " << index << " is " << curr->val << "\n";
         return curr->val;
     }
 
@@ -104,6 +108,7 @@ class MyLinkedList {
             ListNode* temp = this->head;
             this->head = this->head->next;
             delete temp;
+            this->size--;
             return;
         }
 
@@ -157,33 +162,3 @@ class MyLinkedList {
         cout << "Cleaned up memory" << endl;
     }
 };
-
-int main() {
-    MyLinkedList linkedList = MyLinkedList();
-
-    linkedList.addAtHead(1);  // [1]
-    linkedList.displayList();
-
-    linkedList.addAtHead(5);  // [5, 1]
-    linkedList.displayList();
-
-    linkedList.addAtHead(7);  // [7, 5, 1]
-    linkedList.displayList();
-
-    linkedList.addAtTail(3);  // [7, 5, 1, 3]
-    linkedList.displayList();
-
-    linkedList.addAtIndex(1, 2);  // [7, 2, 5, 1, 3]
-    linkedList.displayList();
-
-    linkedList.deleteAtIndex(0);  // [2, 5, 1, 3]
-    linkedList.displayList();
-
-    linkedList.deleteAtIndex(1);  // [2, 1, 3]
-    linkedList.displayList();
-
-    linkedList.displayNodeAddresses();
-
-    int newVal = linkedList.get(0);
-    cout << "Retrieved at index 0: " << newVal << ".\n";
-}
