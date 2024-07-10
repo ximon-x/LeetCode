@@ -322,3 +322,17 @@ class MyLinkedList {
 };
 #+end_src cpp
 
+
+
+* Two Pointer Technique
+There are two scenarios where you'd want to use the two-pointer approach:
+
+1. Two pointers *start at different positions*.
+2. Two pointers *move with different speeds*.
+
+   We will look at the second scenario in detail as the solution is implementing *Floyd's cycle-finding algorithm*.
+
+** Floyd's cycle-detection Algorithm
+Floyd's cycle-detection Algorithm is an algorithm where two pointers represented by a Tortoise and a Hare both traverse a linked list at different speeds. The algorithm works by considering an important factor: /If there is no cycle in the list, the end node would point to a ~nullptr~ and the fast pointer: the hare, would be null at a certain point.
+
+If there is a cycle at some point during the traversal both pointers will inevitably meet at a single node which does not particularly need to be the node when the cycle occurs.
