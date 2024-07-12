@@ -336,3 +336,61 @@ There are two scenarios where you'd want to use the two-pointer approach:
 Floyd's cycle-detection Algorithm is an algorithm where two pointers represented by a Tortoise and a Hare both traverse a linked list at different speeds. The algorithm works by considering an important factor: /If there is no cycle in the list, the end node would point to a ~nullptr~ and the fast pointer: the hare, would be null at a certain point.
 
 If there is a cycle at some point during the traversal both pointers will inevitably meet at a single node which does not particularly need to be the node when the cycle occurs.
+
+#+begin_src cpp
+#include "./Linked_List_Node.cpp"
+
+class Solution {
+   public:
+    bool hasCycle(ListNode* head) {
+        if (head == nullptr)
+            return false;
+
+        ListNode* slow = head;
+        ListNode* fast = head;
+
+        while (fast != nullptr && fast->next != nullptr) {
+            slow = slow->next;
+            fast = fast->next->next;
+
+            if (slow == fast)
+                return true;
+        }
+
+        return false;
+    }
+
+    ListNode* detectCycle(ListNode* head) {
+        if (head == nullptr || head->next == nullptr)
+            return nullptr;
+
+        ListNode* slow = head;
+        ListNode* fast = head;
+
+        // Checking to see if there is a cycle in the linked list.
+        while (fast != nullptr && fast->next != nullptr) {
+            slow = slow->next;
+            fast = fast->next->next;
+
+            if (slow == fast)
+                break;
+        }
+
+        // Checking to see if fast is a nullptr.
+        if (slow != fast)
+            return nullptr;
+
+        slow = head;
+
+        // Using the Floyd's cycle-detection algorithm to pinpoint the node.
+        while (slow != fast) {
+            slow = slow->next;
+            fast = fast->next;
+        }
+
+        return slow;
+    }
+};
+#+end_src
+
+
