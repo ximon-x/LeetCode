@@ -394,3 +394,27 @@ class Solution {
 #+end_src
 
 
+** Intersection Detection Algorithm
+Finding the node where two linked lists intercept can also be done using the Two pointer Technique in O(m + n) time as both lists would sync up after they both meet the end of their respective list. Here is the implementation of this algorithm.
+
+#+begin_src cpp
+#include "./Linked_List_Node.cpp"
+
+class Solution {
+   public:
+    ListNode* getIntersectionNode(ListNode* headA, ListNode* headB) {
+        if (headA == nullptr || headB == nullptr)
+            return nullptr;
+
+        ListNode* p = headA;
+        ListNode* q = headB;
+
+        while (p != q) {
+            p = p == nullptr ? headB : p->next;
+            q = q == nullptr ? headA : q->next;
+        }
+
+        return p;
+    }
+};
+#+end_src cpp
