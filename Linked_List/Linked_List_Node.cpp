@@ -1,4 +1,3 @@
-#include <cstddef>
 #include <iostream>
 
 using namespace std;
@@ -9,7 +8,7 @@ struct ListNode {
 
     ListNode(int value) {
         this->val = value;
-        this->next = NULL;
+        this->next = nullptr;
     }
 
     void displayList() {
