@@ -418,3 +418,29 @@ class Solution {
     }
 };
 #+end_src cpp
+
+
+** Reversing a Linked List
+A very common and classic computer science problem:
+
+#+begin_src cpp
+#include "./Linked_List_Node.cpp"
+
+class Solution {
+   public:
+    ListNode* reverseList(ListNode* head) {
+        ListNode* prevNode = nullptr;
+        ListNode* curr = head;
+        ListNode* nextNode = nullptr;
+
+        while (curr != nullptr) {
+            nextNode = curr->next;
+            curr->next = prevNode;
+            prevNode = curr;
+            curr = nextNode;
+        }
+
+        return prevNode;
+    }
+};
+#+end_src cpp
