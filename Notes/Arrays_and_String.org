@@ -3,3 +3,7 @@
 #+date: <2025-01-01 Wed>
 
 * Introduction to 2D Array
+A two dimensional array is simply a data structure that can be used to store grid like data such as tables or matrices. The underlying structure of the multidimensional array is largely dependent on the language itself. In some languages, the *multidimensional array* is actually implemented internally as a *one-dimensional array*, while in other languages there are no *multidimensional arrays* at all.
+
+C++ stores the array internally as a one-dimensional array while Java stores it as a one-dimensional array of M elements, each of which is an array of N elements.
+
