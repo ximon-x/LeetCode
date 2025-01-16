@@ -17,7 +17,7 @@ I am following the "Explore Card Track" and this will be my training path:
 ### First Layer (C++)
 
 - [x] Arrays 101
-- [ ] Linked List
+- [x] Linked List
 - [ ] Array and Strings
 - [ ] Queue & Stack
 - [ ] Hash Table

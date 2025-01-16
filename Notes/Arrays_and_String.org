@@ -7,3 +7,7 @@ A two dimensional array is simply a data structure that can be used to store gri
 
 C++ stores the array internally as a one-dimensional array while Java stores it as a one-dimensional array of M elements, each of which is an array of N elements.
 
+* Introduction to Strings
+A string is just an array of `Unicode Characters`, hence every operation that can be performed on a array can equally be performed on a string but there are some similiarities like the comparison operator can be applied to strings safely on languages like C++ but does not work as expected on Java and JavaScript.
+
+** Immutable Strings
