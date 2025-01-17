@@ -10,4 +10,9 @@ C++ stores the array internally as a one-dimensional array while Java stores it 
 * Introduction to Strings
 A string is just an array of `Unicode Characters`, hence every operation that can be performed on a array can equally be performed on a string but there are some similiarities like the comparison operator can be applied to strings safely on languages like C++ but does not work as expected on Java and JavaScript.
 
-** Immutable Strings
+** String Search Algorithms
+[[https://en.wikipedia.org/wiki/String-searching_algorithm][String Search]] is a classical problem and a primitive approach would be using a simpler two pointer brute force approach but you can get a better  solution by implementing any of these algorithms.
+
+- [[https://en.wikipedia.org/wiki/Knuth%E2%80%93Morris%E2%80%93Pratt_algorithm][Knuth–Morris–Pratt algorithm]]
+- [[https://en.wikipedia.org/wiki/Boyer%E2%80%93Moore_string-search_algorithm][Boyer–Moore string-search algorithm]]
+- [[https://en.wikipedia.org/wiki/Rabin%E2%80%93Karp_algorithm][Rabin–Karp algorithm]]
