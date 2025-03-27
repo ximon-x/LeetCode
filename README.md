@@ -18,7 +18,7 @@ I am following the "Explore Card Track" and this will be my training path:
 
 - [x] Arrays 101
 - [x] Linked List
-- [ ] Array and Strings
+- [x] Array and Strings
 - [ ] Queue & Stack
 - [ ] Hash Table
 
