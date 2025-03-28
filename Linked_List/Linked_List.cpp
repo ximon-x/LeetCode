@@ -16,16 +16,19 @@ class ListNode {
     }
 };
 
-class MyLinkedList {
+class LinkedList {
     ListNode* head;
     int size;
 
    public:
-    MyLinkedList() {
+    LinkedList() {
         this->head = nullptr;
         this->size = 0;
     }
 
+    // Algorithm Analysis
+    //      Time Complexity:     Ο(n) Ω(1)
+    //      Space Complexity:    Ο(1) Ω(1) Θ(1)
     int get(int index) {
         if (index < 0 || index >= this->size) {
             cout << "Invalid Index"
@@ -43,6 +46,9 @@ class MyLinkedList {
         return curr->val;
     }
 
+    // Algorithm Analysis
+    //      Time Complexity:     Ο(1) Ω(1) Θ(1)
+    //      Space Complexity:    Ο(1) Ω(1) Θ(1)
     void addAtHead(int val) {
         // C++ compiler reuses the same memory address on the stack when the
         // function returns, by using the "new" keyword, the object is created
@@ -55,6 +61,9 @@ class MyLinkedList {
         this->size++;
     }
 
+    // Algorithm Analysis
+    //      Time Complexity:     Ο(n) Ω(1)
+    //      Space Complexity:    Ο(1) Ω(1) Θ(1)
     void addAtTail(int val) {
         if (this->size == 0) {
             this->addAtHead(val);
@@ -73,6 +82,9 @@ class MyLinkedList {
         this->size++;
     }
 
+    // Algorithm Analysis
+    //      Time Complexity:     Ο(n) Ω(1)
+    //      Space Complexity:    Ο(1) Ω(1) Θ(1)
     void addAtIndex(int index, int val) {
         if (index < 0 || index > this->size)
             return;
@@ -100,6 +112,9 @@ class MyLinkedList {
         this->size++;
     }
 
+    // Algorithm Analysis
+    //      Time Complexity:     Ο(n) Ω(1)
+    //      Space Complexity:    Ο(1) Ω(1) Θ(1)
     void deleteAtIndex(int index) {
         if (index < 0 || index >= this->size)
             return;
@@ -125,6 +140,9 @@ class MyLinkedList {
         this->size--;
     }
 
+    // Algorithm Analysis
+    //      Time Complexity:     Ο(n) Ω(1)
+    //      Space Complexity:    Ο(1) Ω(1) Θ(1)
     void displayList() {
         ListNode* node = this->head;
 
@@ -137,6 +155,9 @@ class MyLinkedList {
         cout << "nullptr ].\n";
     }
 
+    // Algorithm Analysis
+    //      Time Complexity:     Ο(n) Ω(1)
+    //      Space Complexity:    Ο(1) Ω(1) Θ(1)
     void displayNodeAddresses() {
         ListNode* node = this->head;
 
@@ -149,7 +170,7 @@ class MyLinkedList {
         cout << "nullptr ].\n";
     }
 
-    ~MyLinkedList() {
+    ~LinkedList() {
         ListNode* node = this->head;
 
         while (node) {
