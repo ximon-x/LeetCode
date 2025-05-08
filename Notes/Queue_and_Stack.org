@@ -173,3 +173,6 @@ One common application of Breadth-first Search (BFS) is to find the shortest par
       return -1;          // there is no path from root to target
   }
 #+end_src
+
+* Stack: Last-in-First-out Data Structure
+In a LIFO data structure, *the newest element added to the queue will be processed first*. The insert operation is called ~push~ and the new element is always *added to the end of the stack*. The delete operation is also called ~pop~ and you can only *remove the last element*.
