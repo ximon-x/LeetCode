@@ -176,3 +176,50 @@ One common application of Breadth-first Search (BFS) is to find the shortest par
 
 * Stack: Last-in-First-out Data Structure
 In a LIFO data structure, *the newest element added to the queue will be processed first*. The insert operation is called ~push~ and the new element is always *added to the end of the stack*. The delete operation is also called ~pop~ and you can only *remove the last element*.
+
+** Minimum Stack
+To show the efficiency of a stack, we implement a minimum stack that is able to return the minimum element in the stack at all times and perform all operations in constant time.
+
+#+begin_src cpp
+  #include <algorithm>
+  using namespace std;
+
+  class StackNode {
+     public:
+      int min;
+      int data;
+
+      StackNode* next;
+
+      StackNode(int data, int min) {
+          this->next = nullptr;
+          this->data = data;
+          this->min = min;
+      }
+  };
+
+  class MinStack {
+      StackNode* head;
+
+     public:
+      MinStack() { head = nullptr; }
+
+      void push(int val) {
+          if (head == nullptr) {
+              head = new StackNode(val, val);
+          } else {
+              int newMin = min(head->min, val);
+              StackNode* newHead = new StackNode(val, newMin);
+
+              newHead->next = head;
+              head = newHead;
+          }
+      }
+
+      void pop() { head = head->next; }
+
+      int top() { return head->data; }
+
+      int getMin() { return head->min; }
+  };
+#+end_src
