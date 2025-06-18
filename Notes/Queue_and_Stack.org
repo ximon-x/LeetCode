@@ -138,42 +138,42 @@ A more effective solution would be to use a static array and then have two point
 One common application of Breadth-first Search (BFS) is to find the shortest part from the root node to the target node. The Breadth-First template is given as:
 
 #+begin_src java
-  /**
-   ,* Return the length of the shortest path between root and target node.
-   ,*/
-  int BFS(Node root, Node target) {
-      Queue<Node> queue;  // store all nodes which are waiting to be processed
-      Set<Node> visited;  // store all the nodes that we've visited
-      int step = 0;       // number of steps needed from root to current node
+    /**
+     * Return the length of the shortest path between root and target node.
+     */
+    int BFS(Node root, Node target) {
+        Queue<Node> queue;  // store all nodes which are waiting to be processed
+        Set<Node> visited;  // store all the nodes that we've visited
+        int step = 0;       // number of steps needed from root to current node
 
-      // initialize
-      add root to queue;
-      add root to visited;
+        // initialize
+        add root to queue;
+        add root to visited;
 
-      // BFS
-      while (queue is not empty) {
-          // iterate the nodes which are already in the queue
-          int size = queue.size();
+        // BFS
+        while (queue is not empty) {
+            // iterate the nodes which are already in the queue
+            int size = queue.size();
 
-          for (int i = 0; i < size; ++i) {
-              Node cur = the first node in queue;
-              return step if cur is target;
+            for (int i = 0; i < size; ++i) {
+                Node cur = the first node in queue;
+                return step if cur is target;
 
-              for (Node next : the neighbors of cur) {
-                  if (next is not in visited) {
-                      add next to queue;
-                      add next to visited;
-                  }
-              }
-  	    
-              remove the first node from queue;
-          }
+                for (Node next : the neighbors of cur) {
+                    if (next is not in visited) {
+                        add next to queue;
+                        add next to visited;
+                    }
+                }
+    	    
+                remove the first node from queue;
+            }
 
-          step = step + 1;
-      }
+            step = step + 1;
+        }
 
-      return -1;          // there is no path from root to target
-  }
+        return -1;          // there is no path from root to target
+    }
 #+end_src
 
 * Stack: Last-in-First-out Data Structure
@@ -225,3 +225,26 @@ To show the efficiency of a stack, we implement a minimum stack that is able to 
       int getMin() { return head->min; }
   };
 #+end_src
+
+* Stacks and DFS
+Similar to the Breadth-First Search, the Depth-First Search is another important algorithm in computer science especially used in various computations such as /tree traversal/. The DFS algorithm works similarly to BFS but has one major difference: BFS can not go deeper until it has visited all nodes at the current level while DFS will not trace back until we reach the deepest node. 
+
+The Depth-First template is given as:
+
+#+begin_src java
+    /** 
+    * Returns true if there is a path from cur to target.
+    */
+    boolean DFS(Node cur, Node target, Set<Node> visited) {
+        return true if cur is target;
+        for (next : each neighbor of cur) {
+            if (next is not in visited) {
+                add next to visited;
+                return true if DFS(next, target, visited);
+            }
+        }
+        return false;
+    }
+#+end_src>
+
+
