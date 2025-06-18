@@ -1,11 +1,11 @@
-#+title: Queue and Stack
-#+author: Simon Samuel
-#+date: <2025-03-27 Thu>
+#+Title: Queue and Stack
+#+Date: <2025-03-27 Thu>
+#+Author: Simon Samuel
 
 * Queue: First-in-First-out Data Structure
-In a FIFO data structure, the *first element added to the queue will be processed first.* The insert operation is also called ~enqueue~ and the new element is always *added at the end of the queue*. The delete operation is also called ~dequeue~ and you're only allowed to *remove the first element*.
+In an FIFO data structure, the *first element added to the queue will be processed first.* The insert operation is also called ~enqueue~ and the new element is always *added at the end of the queue*. The delete operation is also called ~dequeue~ and you're only allowed to *remove the first element*.
 
-To implement a ~Queue~, we may use a dynammic array and have an head pointing to the writing index as in this:
+To implement a ~Queue~, we may use a dynamic array and have a head pointing to the writing index as in this:
 #+begin_src cpp
   #include <vector>
   using namespace std;
@@ -45,7 +45,8 @@ To implement a ~Queue~, we may use a dynammic array and have an head pointing to
 This becomes very inefficient as we have spaces in front that actually never get filled after dequeuing. We can instead try using a circular queue.
 
 ** Circular Queue
-A more effective solution would be to use a static array and then have two pointers pointing to the head and tail of the queue so you know where to insert to and delete from during enqueing and dequeing. This is the most optimal as all operations are constant time.
+A more effective solution would be to use a static array and then have two pointers pointing to the head and tail of the queue. So you know where to insert to and delete from during enqueing and dequeing. This is the most optimal as all operations are constant time.
+
 #+begin_src cpp
   #include <vector>
   using namespace std;
@@ -134,7 +135,8 @@ A more effective solution would be to use a static array and then have two point
 #+end_src
 
 * Queue and BFS
-One common application of Breadth-first Search (BFS) is to find the shortest part from the root node to the target node. The Breadfast template is given as:
+One common application of Breadth-first Search (BFS) is to find the shortest part from the root node to the target node. The Breadth-First template is given as:
+
 #+begin_src java
   /**
    ,* Return the length of the shortest path between root and target node.
@@ -175,7 +177,7 @@ One common application of Breadth-first Search (BFS) is to find the shortest par
 #+end_src
 
 * Stack: Last-in-First-out Data Structure
-In a LIFO data structure, *the newest element added to the queue will be processed first*. The insert operation is called ~push~ and the new element is always *added to the end of the stack*. The delete operation is also called ~pop~ and you can only *remove the last element*.
+In an LIFO data structure, *the newest element added to the queue will be processed first*. The insert operation is called ~push~ and the new element is always *added to the end of the stack*. The delete operation is also called ~pop~ and you can only *remove the last element*.
 
 ** Minimum Stack
 To show the efficiency of a stack, we implement a minimum stack that is able to return the minimum element in the stack at all times and perform all operations in constant time.
