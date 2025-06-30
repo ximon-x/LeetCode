@@ -42,7 +42,7 @@ To implement a ~Queue~, we may use a dynamic array and have a head pointing to t
   };
 #+end_src 
 
-This becomes very inefficient as we have spaces in front that actually never get filled after dequeuing. We can instead try using a circular queue.
+This becomes very inefficient as we have spaces in front that actually never get filled after dequeing. We can instead try using a circular queue.
 
 ** Circular Queue
 A more effective solution would be to use a static array and then have two pointers pointing to the head and tail of the queue. So you know where to insert to and delete from during enqueing and dequeing. This is the most optimal as all operations are constant time.
@@ -229,7 +229,7 @@ To show the efficiency of a stack, we implement a minimum stack that is able to 
 * Stacks and DFS
 Similar to the Breadth-First Search, the Depth-First Search is another important algorithm in computer science especially used in various computations such as /tree traversal/. The DFS algorithm works similarly to BFS but has one major difference: BFS can not go deeper until it has visited all nodes at the current level while DFS will not trace back until we reach the deepest node. 
 
-The Depth-First template is given as:
+The recursive Depth-First template is given as:
 
 #+begin_src java
     /** 
@@ -247,4 +247,4 @@ The Depth-First template is given as:
     }
 #+end_src>
 
-
+Although this recursive approach does not explicitly use a stack, we're implicitly using one: /The Function Call Stack/.
