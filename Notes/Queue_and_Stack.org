@@ -245,6 +245,30 @@ The recursive Depth-First template is given as:
         }
         return false;
     }
-#+end_src>
+#+end_src
 
-Although this recursive approach does not explicitly use a stack, we're implicitly using one: /The Function Call Stack/.
+Although this recursive approach does not explicitly use a stack, we're implicitly using one: /The Function Call Stack/. We can also run into issues if the depth of the recursion is too high; in that case, we could use BFS or explicitly define a stack.
+
+#+begin_src java
+/*
+ * Return true if there is a path from cur to target.
+ */
+boolean DFS(int root, int target) {
+    Set<Node> visited;
+    Stack<Node> stack;
+    add root to visited;
+    add root to stack;
+    while (stack is not empty) {
+        Node cur = the top element in stack;
+        remove the cur from the stack;
+        return true if cur is target;
+        for (Node next : the neighbors of cur) {
+            if (next is not in visited) {
+                add next to visited;
+                add next to stack;
+            }
+        }
+    }
+    return false;
+}
+#+end_src
