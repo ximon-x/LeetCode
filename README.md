@@ -10,6 +10,8 @@ As of 7th August, 2023... I started solving:
 - Medium questions with **TypeScript**
 - Hard questions with **Python3**
 
+Sometime of 2025... I realized that I don't care and just mainly use C++ as it's much moore fun.
+
 ## Training Path
 
 I am following the "Explore Card Track" and this will be my training path:
