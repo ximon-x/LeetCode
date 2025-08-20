@@ -10,7 +10,7 @@ As of 7th August, 2023... I started solving:
 - Medium questions with **TypeScript**
 - Hard questions with **Python3**
 
-Sometime of 2025... I realized that I don't care and just mainly use C++ as it's much moore fun.
+Sometime in 2025... I realized that I didn't care anymore and just mainly use C++ as it's mooooore fun.
 
 ## Training Path
 
