@@ -2,7 +2,7 @@
 #+Date: <2025-07-25 Fri> 
 #+Author: Simon Samuel
 
-The /Hash Table/ is a data structure that uses /hash functions/ in order to support quick insertion and search. There are two different types of hash tables: the /hash set/ and the /hash map/.
+The /Hash Table/ is a data-structure that uses /hash functions/ in order to support quick insertion and search. There are two different types of hash tables: the /hash set/ and the /hash map/.
 
 1. The *hash set* is one of the implementations of the ~set~ meant to store /no duplicate items/.
 2. The *hash map* is one of the implementations of the ~map~ meant to store /(key, value) pairs/.
